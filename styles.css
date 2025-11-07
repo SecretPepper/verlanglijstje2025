@@ -1,6 +1,6 @@
 .box {
   width: 300px;
-  height: 350px;
+  height: 400px;
   padding: 10px;
   border: 2px solid black;
   margin: 10px;
@@ -9,6 +9,20 @@
   display: inline-block;
   vertical-align: top;
   background-image: radial-gradient(circle, black, crimson, royalblue, crimson, royalblue);
+  box-sizing: border-box;
+}
+
+.box0 {
+  width: 300px;
+  height: 400px;
+  padding: 10px;
+  border: 2px solid black;
+  margin: 10px;
+  background-color:whitesmoke;
+  border-radius: 5px;
+  display: inline-block;
+  vertical-align: top;
+  background-image: radial-gradient(circle, black, green, orange, green, orange);
   box-sizing: border-box;
 }
 
@@ -53,14 +67,67 @@
     -webkit-text-fill-color: transparent;
 }
 
+.link0 {
+    text-decoration: none;
+    background: linear-gradient(green, orange);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 body {
     background: linear-gradient(180deg, antiquewhite, lightyellow);
     margin: 30px auto;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
 }
 
 html {
     min-height: 100%;
+}
+
+.categories {
+    margin-bottom: 1em;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    display: inline;
+    background: #eee;
+    border: 2px solid rgba(0, 0, 255, 0.7);
+    padding: 8px 16px;
+    margin: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center
+
+}
+
+input[type="radio"]:checked + label {
+    background: #0078d7;
+    color: white;
+}
+
+.items {
+    display: none;
+}
+
+#home:checked ~ .content .home,
+#barcelona:checked ~ .content .barcelona,
+#gaming:checked ~ .content .gaming {
+    display: block;
+    position: absolute;
+}
+
+.items ul {
+    list-style: none;
+}
+
+.items li {
+    border-radius: 4px;
+    display: inline-flex;
 }
